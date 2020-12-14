@@ -19,6 +19,9 @@ endif
 " Based on vim-json syntax
 runtime syntax/json.vim
 
+" Allow trailing commas
+syn clear jsonTrailingCommaError
+
 " Remove syntax group for comments treated as errors
 syn clear jsonCommentError
 
