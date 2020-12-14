@@ -9,9 +9,13 @@ Code](https://code.visualstudio.com/Docs/languages/json#_json-with-comments),
 a [Microsoft parser library](https://github.com/Microsoft/node-jsonc-parser),
 [.mocharc.jsonc](https://github.com/mochajs/mocha/pull/3760), and the [jsonc
 npm package](https://www.npmjs.com/package/jsonc)) which can be applied to
-files using [`set
-ft=jsonc`](https://vimhelp.org/options.txt.html#%27filetype%27) or a
+files using [`set ft=jsonc`](https://vimhelp.org/options.txt.html#%27filetype%27) or a
 [modeline](https://vimhelp.org/options.txt.html#modeline).
+
+These syntax highlighting settings are based on kevinoids version
+at https://github.com/kevinoid/vim-jsonc. This version extends the JSON
+syntax not only by allowing comments within JSON data files but
+also allows trailing commas at the end of lists.
 
 
 ## Installation
@@ -21,20 +25,20 @@ This plugin can be installed in the usual ways:
 ### Using [Vim Packages](https://vimhelp.org/repeat.txt.html#packages)
 
 ```sh
-git clone https://github.com/kevinoid/vim-jsonc.git ~/.vim/pack/git-plugins/start/vim-jsonc
+git clone https://github.com/jkpubsrc/vim-jsonc.git ~/.vim/pack/git-plugins/start/vim-jsonc
 ```
 
 ### Using [Pathogen](https://github.com/tpope/vim-pathogen)
 
 ```sh
-git clone https://github.com/kevinoid/vim-jsonc.git ~/.vim/bundle/vim-jsonc
+git clone https://github.com/jkpubsrc/vim-jsonc.git ~/.vim/bundle/vim-jsonc
 ```
 
 ### Using [Vundle](https://github.com/VundleVim/Vundle.vim)
 
 Add the following to `.vimrc`:
 ```vim
-Plugin 'kevinoid/vim-jsonc'
+Plugin 'jkpubsrc/vim-jsonc'
 ```
 Then run `:PluginInstall`.
 
@@ -42,14 +46,15 @@ Then run `:PluginInstall`.
 
 Add the following to `.vimrc` between `plug#begin()` and `plug#end()`:
 ```vim
-Plug 'kevinoid/vim-jsonc'
+Plug 'jkpubsrc/vim-jsonc'
 ```
 
 
 ## Implementation
 
 This plugin loads the JSON syntax plugin, clears the syntax group for
-comments as errors, then defines additional syntax to match C-style comments.
+trailing commas in lists, for comments as errors, then defines
+additional syntax to match C-style comments.
 
 This project was inspired by, and the code is based on,
 [elzr/vim-json#61](https://github.com/elzr/vim-json/pull/61) by
